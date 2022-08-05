@@ -1,4 +1,4 @@
-import cx from 'classnames'
+import classNames from 'classnames'
 import Link from 'next/link'
 
 interface MenuProps {
@@ -13,7 +13,7 @@ export default function Menu(props: Partial<MenuProps>) {
   // const {title, active=false} = props;
   const {title, active, href = '/'} = props;
 
-  const className = cx({
+  const navLinkClass = classNames({
     "nav-link": true,
     active: active,
   });
@@ -21,7 +21,7 @@ export default function Menu(props: Partial<MenuProps>) {
   return (
     <li className="nav-item my-auto">
       <Link href={href}>
-        <a className={className} aria-current="page">
+        <a className={navLinkClass} aria-current="page">
           {title}
         </a>
       </Link>
